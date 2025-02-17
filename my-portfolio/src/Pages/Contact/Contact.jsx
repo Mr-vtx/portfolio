@@ -27,10 +27,10 @@ const ContactPage = () => {
 
     emailjs
       .send(
-        "service_kf36ic8",
-        "template_pbyj1id",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         emailData,
-        "PUhlo28qE0qluy88V"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         (result) => {
