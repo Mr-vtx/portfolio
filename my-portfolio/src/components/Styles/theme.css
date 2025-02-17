@@ -1,0 +1,14 @@
+.theme-toggle {
+  background: var(--accent-color);
+  color: var(--text-color);
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.theme-toggle:hover {
+  background: var(--secondary-color);
+  box-shadow: 0 0 10px var(--secondary-color);
+}
