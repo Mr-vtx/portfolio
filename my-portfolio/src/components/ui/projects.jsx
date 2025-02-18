@@ -45,7 +45,7 @@ const Projects = () => {
       : projects.filter((project) => project.category === activeCategory);
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
+    <div className="max-w-6xl mx-auto mt-24 py-5 p-6">
       <h2 className="text-3xl font-bold text-center text-neon-cyan mb-6">
         Portfolio
       </h2>
