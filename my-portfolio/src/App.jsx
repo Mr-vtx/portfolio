@@ -8,38 +8,12 @@ import Layout from "./components/Layout/Layout";
 function App() {
   return (
     <Routes>
-      <Route
-        path="/"
-        element={
-          <Layout>
-            <Homepage />
-          </Layout>
-        }
-      />
-      <Route
-        path="/projects"
-        element={
-          <Layout>
-            <Project />
-          </Layout>
-        }
-      />
-      <Route
-        path="/blog"
-        element={
-          <Layout>
-            <BlogPostDetail />
-          </Layout>
-        }
-      />
-      <Route
-        path="/contact"
-        element={
-          <Layout>
-            <Contact />
-          </Layout>
-        }
-      />
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Homepage />} />
+        <Route path="projects" element={<Project />} />
+        <Route path="blog" element={<BlogPostDetail />} />
+        <Route path="contact" element={<Contact />} />
+      </Route>
     </Routes>
   );
 }
