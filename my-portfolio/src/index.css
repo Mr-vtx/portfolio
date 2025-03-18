@@ -8,7 +8,7 @@
   --text-color: #ffffff;
 }
 
-.light-mode {
+.light {
   --primary-color: #ffffff; /* Light Mode */
   --secondary-color: #FFB347;
   --accent-color: #E6C200;

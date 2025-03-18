@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { MdLocationOn, MdPhone, MdEmail } from "react-icons/md";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({

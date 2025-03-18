@@ -58,7 +58,7 @@ function Homepage() {
         <HeroSection />
       </div>
       {/* About Me Section */}
-      <section className="w-full px-6 md:px-20 py-16 text-center">
+      <section id="about" className="w-full px-6 md:px-20 py-16 text-center">
         <About />
       </section>
       {/* Tech Stack Section */}
