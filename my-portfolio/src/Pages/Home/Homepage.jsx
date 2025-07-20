@@ -57,11 +57,9 @@ function Homepage() {
       <div>
         <HeroSection />
       </div>
-      {/* About Me Section */}
       <section id="about" className="w-full px-6 md:px-20 py-16 text-center">
         <About />
       </section>
-      {/* Tech Stack Section */}
       <section ref={techRef} className="w-full px-6 md:px-20 py-16 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

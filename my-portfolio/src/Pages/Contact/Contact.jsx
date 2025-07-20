@@ -169,20 +169,6 @@ const ContactPage = () => {
           </div>
         </div>
       </section>
-
-      {/* Optional Map Section */}
-      <section className="contact-map py-24 px-8 bg-primary-color text-text-color">
-        <div className="max-w-full mx-auto relative rounded-xl shadow-lg overflow-hidden">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31717.976740067214!2d7.5168586!3d6.4265302!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1044a1cc32b9eaff%3A0x6dc2d102396baacf!2suniversity%20of%20Nigeria%20Enugu%20campus!5e0!3m2!1sen!2sng!4v1739824329763!5m2!1sen!2sng"
-            className="w-full h-96 rounded-xl"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </div>
-      </section>
     </div>
   );
 };

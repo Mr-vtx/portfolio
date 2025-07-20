@@ -2,16 +2,16 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { HeroImage } from "../../assets/images";
 import { TypeAnimation } from "react-type-animation";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [theme, setTheme] = useState("light");
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check for mobile view
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Adjust based on your mobile breakpoint
+      setIsMobile(window.innerWidth <= 768);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -39,83 +39,115 @@ const HeroSection = () => {
 
   return (
     <>
-      {/* Desktop View */}
       {!isMobile && (
-        <motion.section
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="relative w-full h-screen flex items-center justify-between overflow-hidden px-10 md:px-20"
-        >
+        <section className="relative w-full h-screen flex items-center justify-between px-4 md:px-10 overflow-hidden">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            className="text-left z-10 max-w-lg"
+            className="z-10 max-w-xl"
           >
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight text-[var(--text-color)]">
               Hi, I'm Chibuike Vans
             </h1>
+
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="text-2xl md:text-4xl font-semibold text-[#00F0FF] dark:text-[#005f77] mt-4"
+              className="text-2xl md:text-4xl font-medium text-[var(--secondary-color)] mt-4"
             >
               <TypeAnimation
                 sequence={[
-                  "I'm a Software Technician.",
+                  "Software Technician.",
                   2000,
-                  "I'm a Web Developer.",
+                  "Web Developer.",
                   2000,
-                  "I build scalable solutions.",
+                  "Tech Enthusiast.",
+                  2000,
+                  "Scalable Solution Builder.",
                   2000,
                 ]}
                 speed={50}
                 repeat={Infinity}
               />
             </motion.h2>
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="text-lg text-gray-600 dark:text-gray-400 mt-6"
+              className="text-lg mt-6 text-gray-600 dark:text-gray-400 leading-relaxed"
             >
-              Crafting seamless digital experiences with cutting-edge
+              I craft seamless digital experiences using cutting-edge
               technologies.
-              <br />{" "}
-              <span className="text-[#9D00FF] dark:text-[#7d0077]">
-                Innovating
-              </span>{" "}
-              the web, one line of code at a time.
+              <br />
+              <span className="text-[var(--accent-color)] font-medium">
+                Innovating the web
+              </span>
+              , one line of code at a time.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="mt-8 flex gap-4"
+            >
+              <Link
+                to="/projects"
+                className="px-6 py-3 rounded-full bg-[var(--secondary-color)] text-white dark:text-black font-semibold hover:bg-opacity-90 transition"
+              >
+                Explore my Innovations
+              </Link>
+              <Link
+                to="/contact"
+                className="px-6 py-3 rounded-full border border-[var(--secondary-color)] text-[var(--secondary-color)] font-semibold hover:bg-[var(--secondary-color)] hover:text-white dark:hover:text-black transition"
+              >
+                Contact Me
+              </Link>
+            </motion.div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             className="relative z-10 hidden md:block"
           >
-            <motion.img
-              src={HeroImage}
-              loading="lazy"
-              alt="Hero"
-              className="w-[300px] md:w-[400px] lg:w-[500px] rounded-xl object-cover"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1 }}
-              style={{
-                transform: `translate(${mousePos.x * 0.01}px, ${
-                  mousePos.y * 0.01
-                }px)`,
-              }}
-            />
+            <div className="relative group w-[300px] md:w-[420px] lg:w-[480px]">
+              <motion.div
+                className="absolute inset-0 rounded-xl bg-gradient-to-tr from-[var(--accent-color)]/10 to-[var(--secondary-color)]/10 blur-lg opacity-50 group-hover:blur-md transition-all duration-500 pointer-events-none"
+                animate={{
+                  rotate: [0, 2, -2, 0],
+                  scale: [1, 1.03, 1.02, 1],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+
+              <motion.img
+                src={HeroImage}
+                loading="lazy"
+                alt="Hero"
+                className="rounded-xl object-cover shadow-2xl border border-[var(--accent-color)]"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1 }}
+                style={{
+                  transform: `translate(${mousePos.x * 0.005}px, ${
+                    mousePos.y * 0.005
+                  }px)`,
+                }}
+              />
+            </div>
           </motion.div>
-        </motion.section>
+        </section>
       )}
 
-      {/* Mobile View */}
       {isMobile && (
         <motion.section
           className="relative w-full h-screen bg-cover bg-center text-white"
@@ -123,7 +155,6 @@ const HeroSection = () => {
             backgroundImage: `url(${HeroImage})`,
           }}
         >
-          {/* Black Overlay with RGBA color for opacity control */}
           <div
             className="absolute inset-0 z-10"
             style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
@@ -135,7 +166,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="text-2xl font-semibold text-[#00F0FF] mt-4"
+              className="text-2xl font-semibold text-[#00F0FF]"
             >
               <TypeAnimation
                 sequence={[
@@ -154,7 +185,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="text-lg text-gray-200 mt-6"
+              className="text-lg text-gray-200 mt-4"
             >
               Crafting seamless digital experiences with cutting-edge
               technologies.

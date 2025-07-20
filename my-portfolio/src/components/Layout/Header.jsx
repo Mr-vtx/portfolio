@@ -33,7 +33,6 @@ function Header() {
 
   const navItems = [
     { name: "Home", icon: <Home size={18} />, path: "/" },
-    { name: "About", icon: <User size={18} />, path: "#about" },
     { name: "Projects", icon: <Folder size={18} />, path: "/projects" },
     { name: "Contact", icon: <Mail size={18} />, path: "/contact" },
   ];
