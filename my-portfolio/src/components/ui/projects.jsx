@@ -17,8 +17,8 @@ const projects = [
     title: "E-commerce Store",
     category: "Web Dev",
     image: Prj1,
-    liveLink: "https://vans-mern-ecommerce.onrender.com",
-    githubLink: "https://github.com/chibuikewis/vans-mern-ecommerce",
+    liveLink: "https://cheesestore.vercel.app/",
+    githubLink: "",
   },
   {
     title: "Crypto Tracker",
