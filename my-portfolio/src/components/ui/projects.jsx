@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaGithub, FaEye } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { Prj1, Prj2, Prj3, Prj4 } from "../../assets/images";
+import { Prj1, Prj2, Prj3, Prj4, prj5 } from "../../assets/images";
 
 const projectCategories = ["All", "Web Dev", "App", "Web3"];
 
@@ -21,18 +21,25 @@ const projects = [
     githubLink: "",
   },
   {
-    title: "Crypto Tracker",
-    category: "Web3",
-    image: Prj2,
-    liveLink: "https://yourcrypto.com",
-    githubLink: "https://github.com/yourgithub/crypto-tracker",
+    title: "App Landing Page",
+    category: "Web Dev",
+    image: Prj5,
+    liveLink: "https://xyn.onrender.com/",
+    githubLink: "",
   },
   {
-    title: "Finance App",
-    category: "App",
+    title: "Crypto Landing",
+    category: "Web3",
+    image: Prj2,
+    liveLink: "",
+    githubLink: "",
+  },
+  {
+    title: "Fintech",
+    category: "Web Dev",
     image: Prj3,
-    liveLink: "https://yourapp.com",
-    githubLink: "https://github.com/yourgithub/finance-app",
+    liveLink: "https://falconbank.vercel.app/",
+    githubLink: "",
   },
 ];
 
