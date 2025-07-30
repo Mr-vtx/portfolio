@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaGithub, FaEye } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { Prj1, Prj2, Prj3, Prj4, prj5 } from "../../assets/images";
+import { Prj1, Prj2, Prj3, Prj4, Prj5, prj5 } from "../../assets/images";
 
 const projectCategories = ["All", "Web Dev", "App", "Web3"];
 
